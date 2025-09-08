@@ -69,6 +69,7 @@ class MainWin(QMainWindow):
         self.ui.setupUi(self)
 
         df = pd.read_excel("OLD_DF.xlsx")
+        df["VALUE"] = (df["QUANTITY"] * df["RATE"] * -1).astype(int)
 
         model = PandasModel(df)
 
@@ -81,6 +82,8 @@ class MainWin(QMainWindow):
         # these are the columns in OLD_DF
         # BROKER_ID	SHEET	STRATEGY	EXCHANGE	INSTRUMENT	SYMBOL	
         # EXPIRY	STRIKE	OPT_TYPE	QUANTITY
+
+        #================================ FILTERS ==================================#
 
         self.ui.broker.setEditable(True)
         self.ui.broker.lineEdit().setPlaceholderText("BROKER_ID")
@@ -171,6 +174,9 @@ class MainWin(QMainWindow):
         self.ui.quantity.currentTextChanged.connect(
             lambda text: self.proxy.setFilterForColumn(9, text)
         )
+
+        #================================ FILTERS END ==================================#
+
 
 
 

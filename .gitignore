@@ -3,3 +3,5 @@ __pycache__/
 risk/
 venv/
 *.xlsx
+*.csv
+*.txt

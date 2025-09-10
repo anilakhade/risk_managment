@@ -17,13 +17,14 @@ from PySide6.QtGui import (QBrush, QColor, QConicalGradient, QCursor,
     QPalette, QPixmap, QRadialGradient, QTransform)
 from PySide6.QtWidgets import (QAbstractItemView, QAbstractScrollArea, QApplication, QComboBox,
     QFrame, QHBoxLayout, QHeaderView, QMainWindow,
-    QSizePolicy, QTableView, QVBoxLayout, QWidget)
+    QPushButton, QSizePolicy, QTableView, QVBoxLayout,
+    QWidget)
 
 class Ui_MainWindow(object):
     def setupUi(self, MainWindow):
         if not MainWindow.objectName():
             MainWindow.setObjectName(u"MainWindow")
-        MainWindow.resize(1216, 700)
+        MainWindow.resize(1118, 661)
         self.centralwidget = QWidget(MainWindow)
         self.centralwidget.setObjectName(u"centralwidget")
         self.verticalLayout_2 = QVBoxLayout(self.centralwidget)
@@ -89,6 +90,11 @@ class Ui_MainWindow(object):
 
         self.horizontalLayout.addWidget(self.quantity)
 
+        self.openCardBtn = QPushButton(self.filter_frame)
+        self.openCardBtn.setObjectName(u"openCardBtn")
+
+        self.horizontalLayout.addWidget(self.openCardBtn)
+
 
         self.verticalLayout_2.addWidget(self.filter_frame)
 
@@ -133,5 +139,6 @@ class Ui_MainWindow(object):
         self.strike.setPlaceholderText(QCoreApplication.translate("MainWindow", u"STRIKE", None))
         self.opt_type.setPlaceholderText(QCoreApplication.translate("MainWindow", u"OPT_TYPE", None))
         self.quantity.setPlaceholderText(QCoreApplication.translate("MainWindow", u"QUANTITY", None))
+        self.openCardBtn.setText(QCoreApplication.translate("MainWindow", u"CARD", None))
     # retranslateUi
 

@@ -4,6 +4,7 @@ from PySide6.QtGui import QShortcut, QKeySequence
 from master import Ui_MainWindow
 from main2 import StrategyWin
 from main import MainWin
+import pathlib
 
 def attach_esc_close(win):
     QShortcut(QKeySequence("Escape"), win, win.close)
@@ -46,6 +47,9 @@ class MasterWin(QMainWindow):
 
 if __name__ == "__main__":
     app = QApplication(sys.argv)
+    app.setStyle("Fusion")
+    qss = pathlib.Path("theme-dark.qss").read_text(encoding="utf-8")
+    app.setStyleSheet(qss)
     w = MasterWin()
     w.show()
     sys.exit(app.exec())

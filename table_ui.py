@@ -24,7 +24,7 @@ class Ui_MainWindow(object):
     def setupUi(self, MainWindow):
         if not MainWindow.objectName():
             MainWindow.setObjectName(u"MainWindow")
-        MainWindow.resize(1118, 661)
+        MainWindow.resize(1201, 661)
         self.centralwidget = QWidget(MainWindow)
         self.centralwidget.setObjectName(u"centralwidget")
         self.verticalLayout_2 = QVBoxLayout(self.centralwidget)
@@ -108,11 +108,17 @@ class Ui_MainWindow(object):
         self.verticalLayout.setContentsMargins(0, 0, 0, 0)
         self.tableView = QTableView(self.table_frame)
         self.tableView.setObjectName(u"tableView")
+        font = QFont()
+        font.setFamilies([u"RobotoMono Nerd Font [GOOG]"])
+        font.setPointSize(12)
+        font.setBold(True)
+        self.tableView.setFont(font)
         self.tableView.setSizeAdjustPolicy(QAbstractScrollArea.SizeAdjustPolicy.AdjustToContents)
         self.tableView.setEditTriggers(QAbstractItemView.EditTrigger.NoEditTriggers)
         self.tableView.setAlternatingRowColors(True)
         self.tableView.setSelectionBehavior(QAbstractItemView.SelectionBehavior.SelectRows)
         self.tableView.setSortingEnabled(True)
+        self.tableView.setWordWrap(False)
         self.tableView.verticalHeader().setProperty(u"showSortIndicator", True)
 
         self.verticalLayout.addWidget(self.tableView)

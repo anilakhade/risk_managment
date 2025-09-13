@@ -6,7 +6,7 @@
    <rect>
     <x>0</x>
     <y>0</y>
-    <width>800</width>
+    <width>1042</width>
     <height>600</height>
    </rect>
   </property>
@@ -16,7 +16,7 @@
   <widget class="QWidget" name="centralwidget">
    <layout class="QVBoxLayout" name="verticalLayout">
     <item>
-     <widget class="QFrame" name="frame">
+     <widget class="QFrame" name="top_frame">
       <property name="frameShape">
        <enum>QFrame::Shape::StyledPanel</enum>
       </property>
@@ -25,13 +25,19 @@
       </property>
       <layout class="QHBoxLayout" name="horizontalLayout">
        <item>
-        <widget class="QComboBox" name="comboBox"/>
+        <widget class="QComboBox" name="broker_box"/>
        </item>
        <item>
-        <widget class="QComboBox" name="comboBox_2"/>
+        <widget class="QComboBox" name="sheet_box"/>
        </item>
        <item>
-        <widget class="QComboBox" name="comboBox_3"/>
+        <widget class="QComboBox" name="strategy_box"/>
+       </item>
+       <item>
+        <widget class="QComboBox" name="symbol_box"/>
+       </item>
+       <item>
+        <widget class="QComboBox" name="expiry_box"/>
        </item>
        <item>
         <spacer name="horizontalSpacer">
@@ -59,7 +65,7 @@
         <rect>
          <x>0</x>
          <y>0</y>
-         <width>780</width>
+         <width>1022</width>
          <height>526</height>
         </rect>
        </property>

@@ -23,45 +23,55 @@ class Ui_MainWindow(object):
     def setupUi(self, MainWindow):
         if not MainWindow.objectName():
             MainWindow.setObjectName(u"MainWindow")
-        MainWindow.resize(800, 600)
+        MainWindow.resize(1042, 600)
         self.centralwidget = QWidget(MainWindow)
         self.centralwidget.setObjectName(u"centralwidget")
         self.verticalLayout = QVBoxLayout(self.centralwidget)
         self.verticalLayout.setObjectName(u"verticalLayout")
-        self.frame = QFrame(self.centralwidget)
-        self.frame.setObjectName(u"frame")
-        self.frame.setFrameShape(QFrame.Shape.StyledPanel)
-        self.frame.setFrameShadow(QFrame.Shadow.Raised)
-        self.horizontalLayout = QHBoxLayout(self.frame)
+        self.top_frame = QFrame(self.centralwidget)
+        self.top_frame.setObjectName(u"top_frame")
+        self.top_frame.setFrameShape(QFrame.Shape.StyledPanel)
+        self.top_frame.setFrameShadow(QFrame.Shadow.Raised)
+        self.horizontalLayout = QHBoxLayout(self.top_frame)
         self.horizontalLayout.setObjectName(u"horizontalLayout")
-        self.comboBox = QComboBox(self.frame)
-        self.comboBox.setObjectName(u"comboBox")
+        self.broker_box = QComboBox(self.top_frame)
+        self.broker_box.setObjectName(u"broker_box")
 
-        self.horizontalLayout.addWidget(self.comboBox)
+        self.horizontalLayout.addWidget(self.broker_box)
 
-        self.comboBox_2 = QComboBox(self.frame)
-        self.comboBox_2.setObjectName(u"comboBox_2")
+        self.sheet_box = QComboBox(self.top_frame)
+        self.sheet_box.setObjectName(u"sheet_box")
 
-        self.horizontalLayout.addWidget(self.comboBox_2)
+        self.horizontalLayout.addWidget(self.sheet_box)
 
-        self.comboBox_3 = QComboBox(self.frame)
-        self.comboBox_3.setObjectName(u"comboBox_3")
+        self.strategy_box = QComboBox(self.top_frame)
+        self.strategy_box.setObjectName(u"strategy_box")
 
-        self.horizontalLayout.addWidget(self.comboBox_3)
+        self.horizontalLayout.addWidget(self.strategy_box)
+
+        self.symbol_box = QComboBox(self.top_frame)
+        self.symbol_box.setObjectName(u"symbol_box")
+
+        self.horizontalLayout.addWidget(self.symbol_box)
+
+        self.expiry_box = QComboBox(self.top_frame)
+        self.expiry_box.setObjectName(u"expiry_box")
+
+        self.horizontalLayout.addWidget(self.expiry_box)
 
         self.horizontalSpacer = QSpacerItem(483, 20, QSizePolicy.Policy.Expanding, QSizePolicy.Policy.Minimum)
 
         self.horizontalLayout.addItem(self.horizontalSpacer)
 
 
-        self.verticalLayout.addWidget(self.frame)
+        self.verticalLayout.addWidget(self.top_frame)
 
         self.scrollArea = QScrollArea(self.centralwidget)
         self.scrollArea.setObjectName(u"scrollArea")
         self.scrollArea.setWidgetResizable(True)
         self.scrollAreaWidgetContents = QWidget()
         self.scrollAreaWidgetContents.setObjectName(u"scrollAreaWidgetContents")
-        self.scrollAreaWidgetContents.setGeometry(QRect(0, 0, 780, 526))
+        self.scrollAreaWidgetContents.setGeometry(QRect(0, 0, 1022, 526))
         self.verticalLayout_4 = QVBoxLayout(self.scrollAreaWidgetContents)
         self.verticalLayout_4.setObjectName(u"verticalLayout_4")
         self.cardsLayout = QVBoxLayout()

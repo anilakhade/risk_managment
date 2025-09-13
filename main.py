@@ -71,6 +71,7 @@ class MainWin(QMainWindow):
         df = pd.read_excel("OLD_DF.xlsx")
         df["VALUE"] = (df["QUANTITY"] * df["RATE"] * -1).astype(int)
 
+        key = ["BROKER_ID", "SHEET", "STRATEGY"]
         model = PandasModel(df)
 
         self.proxy = MultiColFilterProxy()

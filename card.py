@@ -15,9 +15,9 @@ from PySide6.QtGui import (QBrush, QColor, QConicalGradient, QCursor,
     QFont, QFontDatabase, QGradient, QIcon,
     QImage, QKeySequence, QLinearGradient, QPainter,
     QPalette, QPixmap, QRadialGradient, QTransform)
-from PySide6.QtWidgets import (QApplication, QFrame, QGridLayout, QHeaderView,
-    QLabel, QPushButton, QSizePolicy, QTableView,
-    QVBoxLayout, QWidget)
+from PySide6.QtWidgets import (QAbstractItemView, QApplication, QFrame, QGridLayout,
+    QHeaderView, QLabel, QPushButton, QSizePolicy,
+    QTableView, QVBoxLayout, QWidget)
 
 class Ui_card(object):
     def setupUi(self, card):
@@ -112,6 +112,18 @@ class Ui_card(object):
 
         self.tableView = QTableView(card)
         self.tableView.setObjectName(u"tableView")
+        font = QFont()
+        font.setFamilies([u"RobotoMono Nerd Font [GOOG]"])
+        font.setPointSize(12)
+        font.setBold(True)
+        self.tableView.setFont(font)
+        self.tableView.setAutoFillBackground(True)
+        self.tableView.setAlternatingRowColors(True)
+        self.tableView.setSelectionBehavior(QAbstractItemView.SelectionBehavior.SelectRows)
+        self.tableView.setTextElideMode(Qt.TextElideMode.ElideNone)
+        self.tableView.setShowGrid(True)
+        self.tableView.setSortingEnabled(True)
+        self.tableView.setWordWrap(False)
 
         self.verticalLayout.addWidget(self.tableView)
 

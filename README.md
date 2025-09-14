@@ -13,7 +13,6 @@ It helps traders analyze and track positions in Indian markets without relying o
 - This requires 20+ back-office staff, often working until **10 PM or even midnight**.  
 - Mistakes are frequent because of **manual data entry**.  
 
- **In short: we are stuck in Excel, and we need automation.**  
 
 **In short: we are stuck in Excel, and we need automation.**  
 

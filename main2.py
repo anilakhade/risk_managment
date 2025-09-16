@@ -13,6 +13,10 @@ class StrategyWin(QMainWindow):
 
         # ====== Load data =======
         df = pd.read_excel("OLD_DF.xlsx")
+
+        df["EXPIRY"] = pd.to_datetime(df["EXPIRY"], errors='coerce')
+        df["EXPIRY"] = df["EXPIRY"].dt.strftime("%d%b%y").str.upper()
+        df["EXPIRY"] = df["EXPIRY"].fillna("")
         if "VALUE" not in df.columns:
             df["VALUE"] = (df["QUANTITY"] * df["RATE"] * -1).astype(int)
         self.df = df

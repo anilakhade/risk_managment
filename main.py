@@ -71,7 +71,9 @@ class MainWin(QMainWindow):
         df = pd.read_excel("OLD_DF.xlsx")
         df["VALUE"] = (df["QUANTITY"] * df["RATE"] * -1).astype(int)
 
-        key = ["BROKER_ID", "SHEET", "STRATEGY"]
+        df["EXPIRY"] = pd.to_datetime(df["EXPIRY"], errors='coerce')
+        df["EXPIRY"] = df["EXPIRY"].dt.strftime("%d%b%y").str.upper()
+        df["EXPIRY"] = df["EXPIRY"].fillna("")
         model = PandasModel(df)
 
         self.proxy = MultiColFilterProxy()

@@ -1,8 +1,9 @@
-import pandas as pd 
+import pandas as pd
 
-url = 'https://margincalculator.angelbroking.com/OpenAPI_File/files/OpenAPIScripMaster.json'
+SCRIP_MASTER_URL = 'https://margincalculator.angelbroking.com/OpenAPI_File/files/OpenAPIScripMaster.json'
+OLD_XLSX = "OLD_DF.xlsx"
 
-df = pd.read_json(url)
+bro_df = pd.read_json(SCRIP_MASTER_URL)
 
-print(df.info())
-
+print(bro_df[bro_df["name"] == "TATASTEEL"])
+print(bro_df[bro_df["name"] == "NIFTY"])
